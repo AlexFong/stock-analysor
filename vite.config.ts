@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -35,5 +36,12 @@ export default defineConfig({
     Full URL, e.g. https://foo.com/
     Empty string or ./ (for embedded deployment)
   */
-  base: process.env.NODE_ENV === 'prod' ? '/stockanalysor/' : '/'
+  base: process.env.NODE_ENV === 'prod' ? '/stockanalysor/' : '/',
+  resolve: {
+    // 配置路径别名
+    // 配置pathPath Intellisense插件 使得项目中可以通过 @/... 引用到src目录 
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    }
+  }
 })
