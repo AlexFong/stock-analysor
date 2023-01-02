@@ -1,6 +1,12 @@
+<template>
+  <div>{{ data }}</div>
+</template>
+
 <script setup lang="ts">
-import { defineComponent, getCurrentInstance, onMounted } from "vue";
+import { defineComponent, getCurrentInstance, onMounted, reactive } from "vue";
 import { getStockMinLineData, getStockInfo } from '@/api/api'
+// const data = reactive([])
+
 </script>
 
 <script lang="ts">
@@ -196,10 +202,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div>{{ data }}</div>
-</template>
 
 <style scoped>
 .read-the-docs {
